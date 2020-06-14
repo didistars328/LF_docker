@@ -1,6 +1,6 @@
-##Building Block
+## Building Block
 
-###Namespaces
+### Namespaces
 Namespaces are a feature of the Linux Kernel, and are used to isolate and virtualize system resources between
 processes. System resources that can be virtualized are:
 - Mount (mnt)
@@ -19,10 +19,10 @@ processes. System resources that can be virtualized are:
 namespaces.
 - User ID (user)
     - User and group IDs are different inside and outside of namespaces and can be duplicated.
-####1. How to list all the existing namespaces for a process?
+#### 1. How to list all the existing namespaces for a process?
 ``ls -l /proc/<pid>/ns``
 
-####2. How to create new network namespaces and connect them?
+#### 2. How to create new network namespaces and connect them?
 ``ip netns add ns#`` ex: `ip netns add ns1 &&  ip netns add ns2`
 
 Create a Veth pair with two interfaces: tap1 and tap2:
@@ -47,12 +47,12 @@ Assign the IP address to each one of the interfaces, and then p ing the other en
  
  `ip netns exec ns1 ping 192.168.1.2`
  
-####3. How to delete a namespace?
+#### 3. How to delete a namespace?
 `ip netns delete ns#` ex: `ip netns delete ns1 && ip netns delete ns2`
 
 ---
 
-###Control Groups (cgroups)
+### Control Groups (cgroups)
 
 Control Groups (cgroups) are features of the Linux kernel which limit, account, and isolate resource usage of the
 following resources to a process group:
@@ -78,18 +78,18 @@ following resources to a process group:
     - Controls hugepages size usage
     - Manages per cgroups hugepages matrices.
     
-####1. How to list the available cgroups?
+#### 1. How to list the available cgroups?
 Install the cgroup-tools tool
 `apt install cgroup-tools -y`
 
 List the cgroups with the lscgroup command:
 
 `lscgroup`
-####2. How to list the cgroups associated with a process?
+#### 2. How to list the cgroups associated with a process?
 
 `cat /proc/<pid>/cgroup` ex: `cat /proc/1/cgroup`
 
-####3. How to freeze a process using cgroups, and then de-freeze it?
+#### 3. How to freeze a process using cgroups, and then de-freeze it?
 
 > In this lab, we will use the freezer cgroup to freeze and de-freeze a process. Once a process is frozen, we cannot
   do any operation on it. We need to de-freeze it to make the process accessible again.
@@ -145,12 +145,12 @@ Create a new process and attach it to the c group created in the previous step:
     
 ---
 
-###UnionFS
+### UnionFS
 UnionFS transparently overlays files and directories of separate filesystems, to create a coherent filesystem. Each
 one of the participant directories is referred to as a branch. We can set the priority while mounting branches, mount
 them read-only, etc.
 
-####1. How to transparently overlay two directories, one on top of the other, using UnionFS?
+#### 1. How to transparently overlay two directories, one on top of the other, using UnionFS?
 Install the unionfs-fuse package `apt install unionfs-fuse`
 
 Create a dir1 directory, and then, create two files, f1 and f 2, inside that directory

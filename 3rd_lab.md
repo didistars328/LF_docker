@@ -1,13 +1,13 @@
-##Container Runtimes
+## Container Runtimes
 
-###runC
+### runC
 Install *runC*:
 `apt-get install runC`
 
 Verify the installation by running the following command:
 `run -V`
 
-###Docker
+### Docker
 Install Docker:
 `curl -fsSL https://get.docker.com/ | sh`
 
@@ -19,7 +19,7 @@ systemctl restart docker
 systemctl status docker
 ```
 
-###Rkt
+### Rkt
 install rkt: `git clone https://github.com/coreos/rkt` then `cd rkt`
 
 Run the installation script: `/scripts/install-rkt.sh`

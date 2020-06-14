@@ -3,11 +3,11 @@
 #### chroot:
 - Debian/Ubuntu
 
-`mkdir /mnt/chroot-ubuntu-trusty`
+  `mkdir /mnt/chroot-ubuntu-trusty`
 
-`debootstrap trusty /mnt/chroot-ubuntu-trusty http://archive.ubuntu.com/ubuntu/`
+  `debootstrap trusty /mnt/chroot-ubuntu-trusty http://archive.ubuntu.com/ubuntu/`
 
-`chroot /mnt/chroot-ubuntu-trusty /bin/bash`
+  `chroot /mnt/chroot-ubuntu-trusty /bin/bash`
 
 #### systemd-nspawn:
 - Debian/Ubuntu
