@@ -1,6 +1,6 @@
 ## CHROOT and SYSTEMD-NSPAWN
 
-####chroot:
+#### chroot:
 - Debian/Ubuntu
 
 `mkdir /mnt/chroot-ubuntu-trusty`
@@ -9,19 +9,19 @@
 
 `chroot /mnt/chroot-ubuntu-trusty /bin/bash`
 
-####systemd-nspawn:
+#### systemd-nspawn:
 - Debian/Ubuntu
 
-``apt install systemd-container``
+  `apt install systemd-container`
 
-``debootstrap --arch=amd64 stable ~/DebianJessie``
+  `debootstrap --arch=amd64 stable ~/DebianJessie`
 
-``systemd-nspawn -bD ~/DebianJessie``
+  `systemd-nspawn -bD ~/DebianJessie`
 
 To verify and mange container run next command in the new terminal:
 
-``machinectl``
+`machinectl`
 
 To remove:
 
-``machinectl terminate DebianJessie``
+`machinectl terminate DebianJessie`
