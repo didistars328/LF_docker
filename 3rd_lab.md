@@ -2,10 +2,10 @@
 
 ### runC
 Install *runC*:
-`apt-get install runC`
+`apt-get install runc`
 
 Verify the installation by running the following command:
-`run -V`
+`runc --version`
 
 ### Docker
 Install Docker:
